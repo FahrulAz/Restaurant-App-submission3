@@ -1,0 +1,118 @@
+// responsive
+@media (min-width: 1200px) {
+  .mySlides img {
+    width: fit-content;
+  }
+  .img-card {
+    height: 250px;
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+    .app-bar_brand {
+      h1 {
+        font-size: 1.5em;
+      }
+    }
+    .app-bar_hamburger {
+      display: none;
+    }
+   
+    .app-bar_navigationlink {
+      position: static;
+      width: 100%;
+    }
+   
+    .app-bar_navigationlink ul li {
+      display: inline-block;
+    }
+   
+    .app-bar_navigationlink ul li a {
+      display: inline-block;
+      width: 120px;
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .app-bar_navigationlink{
+    height: 100dvh;
+  }
+}
+@media (max-width: 992px) {
+  .Restaurant-detail {
+    margin: 7rem 4rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .app-bar_brand {
+    h1 {
+      font-size: 24px;
+    }
+    img {
+      height: 36px;
+    }
+  }
+
+  .Restaurant-detail {
+    margin: 6rem 2rem;
+  }
+
+  .img-card {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .app-bar_brand {
+    h1 {
+      font-size: 22px;
+    }
+    img {
+      height: 25px;
+    }
+  }
+  .judul-utama {
+    font-size: 1.7rem;
+  }
+  .sub-judul {
+    font-size: 0.9rem;
+  }
+
+  .Restaurant-detail {
+    margin: 5rem 1.5rem;
+  }
+
+  .detail__header {
+    img {
+      height: 400px;
+    }
+    .overlay-img {
+      height: 150px;
+    }
+    .detail__header__content {
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .detail__menuwrapper {
+    flex-wrap: wrap;
+  }
+  .detail__review {
+    .review_card {
+      width: 350px;
+    }
+
+  }
+}

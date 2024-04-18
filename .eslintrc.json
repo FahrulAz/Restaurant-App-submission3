@@ -4,8 +4,9 @@
         "es2021": true,
         "node": true,
         "jest": true,
-        "codeceptjs": true
+        "codeceptjs/codeceptjs": true
     },
+    "plugins": ["codeceptjs"],
     "extends": "airbnb-base",
     "parserOptions": {
         "ecmaVersion": "latest",

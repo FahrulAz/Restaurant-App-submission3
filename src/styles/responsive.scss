@@ -44,12 +44,6 @@
   }
 }
 @media (max-width: 992px) {
-  .mySlides {
-    img {
-      width: 980px;
-    }
-  }
-
   .Restaurant-detail {
     margin: 7rem 4rem;
   }
@@ -57,11 +51,6 @@
 
 
 @media (max-width: 768px) {
-  .mySlides {
-    img {
-      width: 755px;
-    }
-  }
   .app-bar_brand {
     h1 {
       font-size: 24px;
@@ -81,11 +70,6 @@
 }
 
 @media (max-width: 576px) {
-  .mySlides {
-    img {
-      width: 565px;
-    }
-  }
   .app-bar_brand {
     h1 {
       font-size: 22px;
@@ -106,9 +90,6 @@
   }
 
   .detail__header {
-    img {
-      height: 400px;
-    }
     .overlay-img {
       height: 150px;
     }
@@ -126,6 +107,5 @@
     .review_card {
       width: 350px;
     }
-
   }
 }

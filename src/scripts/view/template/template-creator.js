@@ -2,7 +2,15 @@ import CONFIG from '../../globals/configs';
 
 const createRestoDetailTemplate = (resto) => `
   <div class="detail__header">
-    <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + resto.restaurant.pictureId}" alt="Gambar ${resto.restaurant.name}"/>
+    <picture>
+      <source class="detail__header_img lazyload" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + resto.restaurant.pictureId}" type="image/webp" media="all and (max-width: 576px)" />        
+      <source class="detail__header_img lazyload" srcset="${CONFIG.BASE_IMAGE_URL_SMALL + resto.restaurant.pictureId}" type="image/jpeg" media="all and (max-width: 576px)" />
+      <source class="detail__header_img lazyload" srcset="${CONFIG.BASE_IMAGE_URL_MEDIUM + resto.restaurant.pictureId}" type="image/webp" media="all and (min-width: 577px) and (max-width: 992px)" />    
+      <source class="detail__header_img lazyload" srcset="${CONFIG.BASE_IMAGE_URL_MEDIUM + resto.restaurant.pictureId}" type="image/jpeg" media="all and (min-width: 577px) and (max-width: 992px)" />
+      <source class="detail__header_img lazyload" srcset="${CONFIG.BASE_IMAGE_URL_LARGE + resto.restaurant.pictureId}" type="image/webp" media="all and (min-width: 993px)" />        
+      <source class="detail__header_img lazyload" srcset="${CONFIG.BASE_IMAGE_URL_LARGE + resto.restaurant.pictureId}" type="image/jpeg" media="all and (min-width: 993px)" />
+      <img class="detail__header_img lazyload" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + resto.restaurant.pictureId}" alt="Gambar ${resto.restaurant.name}"/>
+    </picture>
     <div class="overlay-img"></div>
     <div class="detail__header__content">
         <h2>Restoran: ${resto.restaurant.name}</h2>
@@ -67,7 +75,9 @@ const createRestoItemTemplate = (resto) => `
     <div tabindex="0" class="product-card" id="${resto.id}">
         <div tabindex="0" class="badge">⭐<span id="rating">${resto.rating}</span></div>
         <div class="card-img">
-            <img tabindex="0" class="lazyload" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="gambar ${resto.name}">
+        <picture>
+          <img tabindex="0" class="card-img-content lazyload" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + resto.pictureId}" alt="gambar ${resto.name}">
+        </picture>
         </div>
         <div class="card-details">
             <div tabindex="0" class="card-city">Kota <span id="city">${resto.city}</span></div>
@@ -82,7 +92,7 @@ const createRestoItemTemplate = (resto) => `
 const createSkeletonRestoTemplate = (count) => {
   let skeleton = '';
 
-  for (let i = 0; i <count; i += 1) {
+  for (let i = 0; i < count; i += 1) {
     skeleton += `
           <div tabindex="0" class="product-card">
               <div class="card-img">

@@ -1,9 +1,22 @@
 /* eslint-disable no-console */
 /* eslint-disable no-restricted-globals */
+import { registerRoute } from 'workbox-routing';
+import { StaleWhileRevalidate } from 'workbox-strategies';
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { precacheAndRoute } from 'workbox-precaching';
 
 // Do precaching
 precacheAndRoute(self.__WB_MANIFEST);
+
+registerRoute(
+  ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
+  new StaleWhileRevalidate({
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      })],
+  }),
+);
 
 self.addEventListener('install', () => {
   console.log('Service Worker: Installed');
@@ -32,7 +45,7 @@ self.addEventListener('notificationclick', (event) => {
 
   const chainPromise = async () => {
     console.log('Notification has been clicked');
-    await self.clients.openWindow('https://www.dicoding.com/');
+    await self.clients.openWindow('https://restaurant-api.dicoding.dev');
   };
 
   event.waitUntil(chainPromise());

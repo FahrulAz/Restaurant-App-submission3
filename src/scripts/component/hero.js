@@ -8,20 +8,35 @@ class HeroMain extends HTMLElement {
       <div class="slideshow-container">
         <div class="mySlides fade">
           <picture>
-            <source type="image/webp" srcset="./images/heros/hero-image_1.webp"/>
-            <img class="lazyload" src="./images/heros/hero-image_1.jpg" alt="gambar hero ke 1">
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_1-small.webp" type="image/webp" media="all and (max-width: 576px)" />
+            <source class="mySlide_img lazyload" srcset="./images/hero-image_1-small.jpg" type="image/jpeg" media="all and (max-width: 576px)" />
+            <source class="mySlide_img lazyload" srcset="./images/hero-image_1-medium.webp" type="image/webp" media="all and (min-width: 577px) and (max-width: 992px)" />
+            <source class="mySlide_img lazyload" srcset="./images/hero-image_1-medium.jpg" type="image/jpeg" media="all and (min-width: 577px) and (max-width: 992px)" />
+            <source class="mySlide_img lazyload" srcset="./images/hero-image_1-large.webp" type="image/webp" media="all and (min-width: 993px)" />
+            <source class="mySlide_img lazyload" srcset="./images/hero-image_1-large.jpg" type="image/jpeg" media="all and (min-width: 993px)" />
+            <img class="mySlide_img lazyload" data-src="./images/hero-image_1-large.jpg" alt="gambar hero ke 1">
           </picture>
         </div>
         <div class="mySlides fade">
           <picture>
-            <source type="image/webp" srcset="./images/heros/hero-image_2.webp"/>
-            <img class="lazyload" src="./images/heros/hero-image_2.jpg" alt="gambar hero ke 2">
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_2-small.webp" type="image/webp" media="all and (max-width: 576px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_2-small.jpg" type="image/jpeg" media="all and (max-width: 576px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_2-medium.webp" type="image/webp" media="all and (min-width: 577px) and (max-width: 992px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_2-medium.jpg" type="image/jpeg" media="all and (min-width: 577px) and (max-width: 992px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_2-large.webp" type="image/webp" media="all and (min-width: 993px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_2-large.jpg" type="image/jpeg" media="all and (min-width: 993px)" />
+            <img class="mySlide_img lazyload" data-src="./images/hero-image_2-large.jpg" alt="gambar hero ke 2">
           </picture>
         </div>
         <div class="mySlides fade">
           <picture>
-            <source type="image/webp" srcset="./images/heros/hero-image_3.webp"/>
-            <img class="lazyload" src="./images/heros/hero-image_3.jpg" alt="gambar hero ke 3">
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_3-small.webp" type="image/webp" media="all and (max-width: 576px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_3-small.jpg" type="image/jpeg" media="all and (max-width: 576px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_3-medium.webp" type="image/webp" media="all and (min-width: 577px) and (max-width: 992px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_3-medium.jpg" type="image/jpeg" media="all and (min-width: 577px) and (max-width: 992px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_3-large.webp" type="image/webp" media="all and (min-width: 993px)" />
+          <source class="mySlide_img lazyload" srcset="./images/hero-image_3-large.jpg" type="image/jpeg" media="all and (min-width: 993px)" />
+            <img class="mySlide_img lazyload" data-src="./images/hero-image_3-large.jpg" alt="gambar hero ke 3">
           </picture>
         </div>
       </div>

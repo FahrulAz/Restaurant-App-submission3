@@ -7,11 +7,11 @@ Before(({ I }) => {
   I.amOnPage('/#/favourites');
 });
 
-Scenario('liking one restaurant', async ({I}) => {
+Scenario('liking one restaurant', async ({ I }) => {
   I.see('Tidak ada Restaurant Favourite', '.item_not_found');
 
   I.amOnPage('/');
-  
+
   I.seeElement('.btn-card');
   const firstResto = locate('.btn-card').first();
   const firstRestoTitle = await I.grabTextFrom('.card-content-title');
@@ -28,7 +28,7 @@ Scenario('liking one restaurant', async ({I}) => {
 });
 
 // untuk test unlike favourite restaurant
-Scenario('Unliking one restaurant', async ({I}) => {
+Scenario('Unliking one restaurant', async ({ I }) => {
   I.amOnPage('/');
   I.seeElement('.btn-card');
   const firstResto = locate('.btn-card').first();

@@ -1,7 +1,7 @@
 import DataSource from '../../data/data-source';
 import '../../component/hero';
 import SliderImageHero from '../../utils/slider-hero';
-import { createRestoItemTemplate, createLoading } from '../template/template-creator';
+import { createRestoItemTemplate, createLoading, createSkeletonRestoTemplate } from '../template/template-creator';
 
 const Home = {
   async render() {
@@ -11,8 +11,9 @@ const Home = {
       <hero-main></hero-main>
         <h1 tabindex="0" class="judul-utama">List Seluruh Restaurant Di Seluruh Indonesia</h1>
         
-        <list-resto tabindex="0" id="explore-restaurant">
-        </list-resto>
+        <div tabindex="0" id="list-restaurants" class="list-restaurants">
+        ${createSkeletonRestoTemplate(20)}
+        </div>
     </div>
 `;
   },
@@ -20,7 +21,7 @@ const Home = {
   async afterRender() {
     const loading = document.querySelector('.load');
     const container = document.querySelector('.containerHero');
-    const listResto = document.querySelector('#explore-restaurant');
+    const listResto = document.querySelector('#list-restaurants');
 
     container.style.display = 'none';
     loading.innerHTML = createLoading();
@@ -28,6 +29,7 @@ const Home = {
     try {
       // fungsi menampilkan card
       const restos = await DataSource.getDataResto();
+      listResto.innerHTML = '';
       restos.forEach((resto) => {
         listResto.innerHTML += createRestoItemTemplate(resto);
       });

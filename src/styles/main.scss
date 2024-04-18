@@ -162,12 +162,14 @@ body {
   display: none;
   img {
     vertical-align: middle;
+    object-fit: cover;
     border-radius: 10px;
+    width: 1200px;
   }
 }
 
 .slideshow-container {
-  max-width: 1300px;
+  max-width: 1200px;
   position: relative;
   margin: auto;
   margin-top: 90px;
@@ -218,11 +220,12 @@ body {
 }
 
 // card style
-list-resto {
+.list-restaurants {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  margin: 0 50px;
 }
 
 .product-card {
@@ -589,4 +592,17 @@ list-resto {
   left: 0; 
   right: 0; 
   margin: auto;
-} 
+}
+
+// search style
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.restos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}

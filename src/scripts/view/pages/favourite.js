@@ -7,8 +7,9 @@ const Favourite = {
       <div class="load"></div>
       <div class="container" style="margin-top:120px">
         <h2 class="judul-utama">Daftar Favourite Restoran</h2>
-        <list-resto tabindex="0" id="favorite-restaurant">
-        </list-resto>
+        <h2 class="item_not_found"></h2>
+        <div tabindex="0" id="list-restaurants" class="list-restaurants">
+        </div>
 
         </div>
       </div>
@@ -18,7 +19,8 @@ const Favourite = {
   async afterRender() {
     const loading = document.querySelector('.load');
     const container = document.querySelector('.container');
-    const favoriteContainer = document.querySelector('#favorite-restaurant');
+    const favoriteContainer = document.querySelector('#list-restaurants');
+    const itemNotFound = document.querySelector('.item_not_found');
 
     container.style.display = 'none';
     loading.innerHTML = createLoading();
@@ -26,7 +28,7 @@ const Favourite = {
     try {
       const restos = await FavoriteRestoIdb.getAllRestos();
       if (restos.length === 0) {
-        favoriteContainer.innerHTML = '<h2 class="judul-utama">Tidak ada Restoran yang di Favouritekan</h2>';
+        itemNotFound.innerHTML = '<h2>Tidak ada Restaurant Favourite</h2>';
       }
       restos.forEach((resto) => {
         favoriteContainer.innerHTML += createRestoItemTemplate(resto);

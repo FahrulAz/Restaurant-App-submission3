@@ -2,7 +2,7 @@ import CONFIG from '../../globals/configs';
 
 const createRestoDetailTemplate = (resto) => `
   <div class="detail__header">
-    <img src="${CONFIG.BASE_IMAGE_URL + resto.restaurant.pictureId}" alt="Gambar ${resto.restaurant.name}"/>
+    <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + resto.restaurant.pictureId}" alt="Gambar ${resto.restaurant.name}"/>
     <div class="overlay-img"></div>
     <div class="detail__header__content">
         <h2>Restoran: ${resto.restaurant.name}</h2>
@@ -67,18 +67,39 @@ const createRestoItemTemplate = (resto) => `
     <div tabindex="0" class="product-card" id="${resto.id}">
         <div tabindex="0" class="badge">⭐<span id="rating">${resto.rating}</span></div>
         <div class="card-img">
-            <img tabindex="0" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="gambar ${resto.name}">
+            <img tabindex="0" class="lazyload" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="gambar ${resto.name}">
         </div>
         <div class="card-details">
             <div tabindex="0" class="card-city">Kota <span id="city">${resto.city}</span></div>
-            <h2 tabindex="0" id="title">${resto.name}</h2>
+            <h2 tabindex="0" id="title" class="card-content-title">${resto.name}</h2>
             <p tabindex="0" id="subtitle">${resto.description}
             </p>
          </div>
-        <button class="btn btn-card"></button>
         <a class="btn btn-card" href="#/detail/${resto.id}">Details</a>
     </div>
 `;
+
+const createSkeletonRestoTemplate = (count) => {
+  let skeleton = '';
+
+  for (let i = 0; i <count; i += 1) {
+    skeleton += `
+          <div tabindex="0" class="product-card">
+              <div class="card-img">
+                  <img tabindex="0" src="./images/placeholder-medium.jpg" alt="skeleton">
+              </div>
+              <div class="card-details">
+                  <div class="card-city">Kota <span id="city"></span></div>
+                  <h2 class="card-content-title">Lorem ipsum dolor sit amet</h2>
+                  <p> Lorem ipsum dolor sit amet, consectetur adipubahisicing elit. A adipisci alias aspernatur, assumenda aut consectetur consequuntur debitis deleniti dicta dolorem dolorum eos exercitationem labore laboriosam magni nihil, nobis obcaecati optio perspiciatis placeat qui recusandae saepe sapiente sequi totam ullam ut
+                  </p>
+               </div>
+              <a class="btn btn-card"">Details</a>
+          </div>
+    `;
+  }
+  return skeleton;
+};
 
 const createBtnFavouriteTemplate = () => `
     <button tabindex="0" aria-label="like this resto" id="likeButton" class="like">
@@ -102,4 +123,5 @@ export {
   createBtnFavouriteTemplate,
   createBtnUnfavouriteTemplate,
   createLoading,
+  createSkeletonRestoTemplate,
 };

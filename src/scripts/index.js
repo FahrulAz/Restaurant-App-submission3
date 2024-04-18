@@ -5,6 +5,8 @@ import './component/navbar';
 import './component/footer';
 import Main from './view/main';
 import swRegister from './utils/sw-register';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const main = new Main({
   button: document.querySelector('#hamburgerButton'),

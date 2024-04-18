@@ -7,13 +7,22 @@ class HeroMain extends HTMLElement {
     this.innerHTML = `
       <div class="slideshow-container">
         <div class="mySlides fade">
-          <img src="./images/heros/hero-image_1.jpg" alt="gambar hero ke 1" style="width:100%">
+          <picture>
+            <source type="image/webp" srcset="./images/heros/hero-image_1.webp"/>
+            <img class="lazyload" src="./images/heros/hero-image_1.jpg" alt="gambar hero ke 1">
+          </picture>
         </div>
         <div class="mySlides fade">
-          <img src="./images/heros/hero-image_2.jpg" alt="gambar hero ke 2" style="width:100%">
+          <picture>
+            <source type="image/webp" srcset="./images/heros/hero-image_2.webp"/>
+            <img class="lazyload" src="./images/heros/hero-image_2.jpg" alt="gambar hero ke 2">
+          </picture>
         </div>
         <div class="mySlides fade">
-          <img src="./images/heros/hero-image_3.jpg" alt="gambar hero ke 3" style="width:100%">
+          <picture>
+            <source type="image/webp" srcset="./images/heros/hero-image_3.webp"/>
+            <img class="lazyload" src="./images/heros/hero-image_3.jpg" alt="gambar hero ke 3">
+          </picture>
         </div>
       </div>
       <br>
